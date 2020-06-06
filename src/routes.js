@@ -1,20 +1,22 @@
 import React from 'react';
 import { Switch, Route} from "react-router-dom";
-import Home from './components/Home';
-import NotFound from './components/NotFound';
+import Home from './components/home';
+import NotFound from './components/not_found';
+import Typing from './containers/typing';
 
 export default function Routes() {
     return (
-        <div>
-            <Switch>
-                <Route exact path="/">
-                    <Home />
-                </Route>
-                <Route path='*'>
-                    <NotFound />
-                </Route>
-            </Switch>
-        </div>
+        <Switch>
+            <Route exact path="/">
+                <Home />
+            </Route>
+            <Route path="/typing">
+                <Typing />
+            </Route>
+            <Route path='*'>
+                <NotFound />
+            </Route>
+        </Switch>
     );
 };
 
